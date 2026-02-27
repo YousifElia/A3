@@ -12,27 +12,27 @@ N=[0-9]+(\.[0-9]+)?
 %%
 <COMMENT>.|\n|\r {}
 <YYINITIAL>{N} {return new Symbol(A3Symbol.NUMBER);}
-<YYINITIAL>"\""[^\"\n]*"\""|"'"[^'\n]*"'" {return new Symbol(A3Symbol.QUOTED);}
+<YYINITIAL>"\""[^\"\n]*"\""|"'"[^'\n]*"'" {return new Symbol(A3Symbol._3);}
 <YYINITIAL>[ \t\r\n] {}
-<YYINITIAL>"WRITE" {return new Symbol(A3Symbol.WRITE);}
-<YYINITIAL>"READ" {return new Symbol(A3Symbol.READ);}
+<YYINITIAL>"WRITE" {return new Symbol(A3Symbol._5);}
+<YYINITIAL>"READ" {return new Symbol(A3Symbol._4);}
 <YYINITIAL>"IF" {return new Symbol(A3Symbol.IF);}
-<YYINITIAL>"ELSE" {return new Symbol(A3Symbol.ELSE);}
-<YYINITIAL>"RETURN" {return new Symbol(A3Symbol.RETURN);}
-<YYINITIAL>"BEGIN" {return new Symbol(A3Symbol.BEGIN);}
-<YYINITIAL>"END" {return new Symbol(A3Symbol.END);}
-<YYINITIAL>"MAIN" {return new Symbol(A3Symbol.MAIN);}
-<YYINITIAL>"STRING"|"INT"|"REAL" {return new Symbol(A3Symbol.TYPE);}
+<YYINITIAL>"ELSE" {return new Symbol(A3Symbol._6);}
+<YYINITIAL>"RETURN" {return new Symbol(A3Symbol._7);}
+<YYINITIAL>"BEGIN" {return new Symbol(A3Symbol._8);}
+<YYINITIAL>"END" {return new Symbol(A3Symbol._9);}
+<YYINITIAL>"MAIN" {return new Symbol(A3Symbol._10);}
+<YYINITIAL>"STRING"|"INT"|"REAL" {return new Symbol(A3Symbol._11);}
 <YYINITIAL>{I} {return new Symbol(A3Symbol.ID);}
-<YYINITIAL>";" {return new Symbol(A3Symbol.SEMICOLON);}
-<YYINITIAL>"," {return new Symbol(A3Symbol.COMMA);}
-<YYINITIAL>"(" {return new Symbol(A3Symbol.LPAREN);}
-<YYINITIAL>")" {return new Symbol(A3Symbol.RPAREN);}
+<YYINITIAL>[;$] {return new Symbol(A3Symbol._12);}
+<YYINITIAL>"," {return new Symbol(A3Symbol._13);}
+<YYINITIAL>"(" {return new Symbol(A3Symbol._1);}
+<YYINITIAL>")" {return new Symbol(A3Symbol._2);}
 <YYINITIAL>"+"|"-" {return new Symbol(A3Symbol.ADD);}
-<YYINITIAL>"*"|"/" {return new Symbol(A3Symbol.MULTIPLY);}
+<YYINITIAL>"*"|"/" {return new Symbol(A3Symbol._14);}
 <YYINITIAL>"==" {return new Symbol(A3Symbol.EQ);}
-<YYINITIAL>"!=" {return new Symbol(A3Symbol.NOTEQ);}
-<YYINITIAL>"=" {return new Symbol(A3Symbol.ASSIGN);}
+<YYINITIAL>"!=" {return new Symbol(A3Symbol._15);}
+<YYINITIAL>"=" {return new Symbol(A3Symbol._16);}
 <YYINITIAL>"/**" {yybegin(COMMENT);}
 <COMMENT>"**/" {yybegin(YYINITIAL);}
 <COMMENT>. {}
