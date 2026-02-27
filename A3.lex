@@ -7,17 +7,12 @@ import java_cup.runtime.*;
 %class A3Scanner
 %eofval{ return null;
 %eofval}
-
-D=[0-9]
-L=[a-zA-Z]
-I={L}({L}|{D})*
-N={D}+(\.{D}+)?
-
+I=[a-zA-Z][a-zA-Z0-9]*
+N=[0-9]+(\.[0-9]+)?
 %%
-
 <COMMENT>.|\n|\r {}
 <YYINITIAL>{N} {return new Symbol(A3Symbol.NUMBER);}
-<YYINITIAL>"\""[^\"\n]*""\"|"'"[^'\n]*"'" {return new Symbol(A3Symbol.QUOTED);}
+<YYINITIAL>"\""[^\"\n]*"\""|"'"[^'\n]*"'" {return new Symbol(A3Symbol.QUOTED);}
 <YYINITIAL>[ \t\r\n] {}
 <YYINITIAL>"WRITE" {return new Symbol(A3Symbol.WRITE);}
 <YYINITIAL>"READ" {return new Symbol(A3Symbol.READ);}
