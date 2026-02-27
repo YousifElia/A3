@@ -1,8 +1,5 @@
-import java.io.*;
-terminal _1,_2,_3,_4,_5,_6,_7,_8,_9,_10,_11,_12,_13,_14,_15,_16,ID,IF,ADD,EQ;
-terminal Integer NUMBER;
-non terminal Integer Program;
-non terminal _a,_b,_c,_d,_e,_f,_g,_h,_i,_j,_k,_l,_m,_n,_o,_p,_q;
+terminal Integer NUMBER,_1,_2,_3,_4,_5,_6,_7,_8,_9,_10,_11,_12,_13,_14,_15,_16,ID,IF,ADD,EQ;
+non terminal Integer,Program,_a,_b,_c,_d,_e,_f,_g,_h,_i,_j,_k,_l,_m,_n,_o,_p,_q;
 Program::=_o{:RESULT=1;:}|Program:e _o{:RESULT=1+e;:};
 _o::=_11 ID _1 _p _2 _g|_11 _10 ID _1 _p _2 _g;
 _p::=|_q|_p _13 _q;
